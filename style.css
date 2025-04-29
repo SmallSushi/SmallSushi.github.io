@@ -1,88 +1,84 @@
-/* ───────── Doom-Cyberpunk Design Tokens ───────── */
-:root {
-    --bg: #0b0d0e;           /* near-black */
-    --panel: #15171a;        /* slightly lighter for cards/sections */
-    --text: #e8e8e8;         /* high-contrast light body text */
-    --accent: #00ff99;       /* neon green */
-    --accent2: #ff0066;      /* neon magenta */
-  
-    --font-heading: "Orbitron", sans-serif;
-    --font-body: "Roboto", sans-serif;
+/* ===============================
+   Doom‑Cyberpunk Theme Variables
+   =============================== */
+   :root {
+    --bg: #0c0c0e;         /* near‑black background */
+    --panel: #131317;      /* panel background */
+    --accent: #D7263D;     /* neon red/pink */
+    --accent2: #1FA2FF;    /* neon cyan */
+    --text: #E5E5E5;       /* light gray text */
+    --text-muted: #9a9a9a; /* muted gray text */
+    font-family: 'Orbitron', 'Roboto', 'Segoe UI', sans-serif;
   }
   
-  /* ───────── Base ───────── */
-  html {
-    scroll-behavior: smooth;
-  }
+  /* ===== Base ===== */
   body {
-    background: var(--bg);
+    background-color: var(--bg);
     color: var(--text);
-    font-family: var(--font-body);
   }
   
-  /* ───────── Sidebar ───────── */
+  h1, h2, h3 {
+    color: var(--accent);
+  }
+  
+  /* ===== Sidebar ===== */
   #sidebar {
-    width: 70px;
-    background: var(--panel);
-    border-right: 2px solid var(--accent2);
-    min-height: 100vh;
+    background-color: var(--panel);
+    height: 100vh; /* full viewport height */
+    border-right: 2px solid var(--accent);
   }
+  
   #sidebar .nav-link {
-    color: var(--text);
-    font-size: 1.5rem;
+    color: var(--text-muted);
+    font-weight: 600;
   }
+  
   #sidebar .nav-link.active,
   #sidebar .nav-link:hover {
-    color: var(--accent);
-  }
-  
-  /* ───────── Banner ───────── */
-  #banner {
-    background: linear-gradient(
-      135deg,
-      rgba(0, 255, 153, 0.15),
-      rgba(255, 0, 102, 0.15)
-    );
-    border: 2px solid var(--accent2);
-    padding: 3rem 1rem;
-    border-radius: 0.5rem;
-  }
-  #banner h1,
-  h2,
-  h3 {
-    font-family: var(--font-heading);
-    letter-spacing: 1px;
-  }
-  
-  /* ───────── Buttons / Cards ───────── */
-  .btn-accent {
-    --bs-btn-border-color: var(--accent);
-    color: var(--accent);
-    border-color: var(--accent);
-  }
-  .btn-accent:hover {
-    background: var(--accent);
-    color: var(--bg);
-  }
-  .card {
-    background: var(--panel);
-    border: 2px solid var(--accent2);
-    color: var(--text);
-  }
-  .card-title {
-    color: var(--accent);
-  }
-  
-  /* ───────── Footer ───────── */
-  footer {
-    font-size: 0.85rem;
-  }
-  
-  /* ───────── Accessibility Helpers ───────── */
-  a {
-    color: var(--accent);
-  }
-  a:hover {
     color: var(--accent2);
+  }
+  
+  /* ===== Banner ===== */
+  .banner {
+    background: linear-gradient(135deg, rgba(215,38,61,0.3), rgba(31,162,255,0.3)), url('assets/banner.jpg') center/cover no-repeat;
+    border-bottom: 2px solid var(--accent);
+  }
+  
+  /* ===== Content Sections ===== */
+  .content-section {
+    padding: 2rem 0;
+  }
+  
+  /* Cards */
+  .card.bg-dark {
+    background-color: #1a1a1d;
+  }
+  
+  .border-accent {
+    border: 1px solid var(--accent);
+  }
+  
+  .btn-outline-accent {
+    --bs-btn-color: var(--accent2);
+    --bs-btn-border-color: var(--accent2);
+    --bs-btn-hover-bg: var(--accent2);
+    --bs-btn-hover-border-color: var(--accent2);
+    --bs-btn-hover-color: var(--bg);
+  }
+  
+  /* Profile Image */
+  .profile {
+    border: 3px solid var(--accent2);
+    border-radius: 50%;
+  }
+  
+  /* ===== Responsive Tweaks ===== */
+  @media (max-width: 767.98px) {
+    #sidebar {
+      height: auto;
+      width: 100%;
+      border-right: none;
+      border-bottom: 2px solid var(--accent);
+    }
   }
   
