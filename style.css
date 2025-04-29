@@ -1,83 +1,84 @@
 /* ===============================
    Doom‑Cyberpunk Theme Variables
    =============================== */
-:root {
-  --bg: #0c0c0e;         /* near‑black background */
-  --panel: #131317;      /* panel background */
-  --accent: #D7263D;     /* neon red/pink */
-  --accent2: #1FA2FF;    /* neon cyan */
-  --text: #E5E5E5;       /* light gray text */
-  --text-muted: #9a9a9a; /* muted gray text */
-  font-family: 'Orbitron', 'Roboto', 'Segoe UI', sans-serif;
-}
-
-/* ===== Base ===== */
-body {
-  background-color: var(--bg);
-  color: var(--text);
-}
-
-h1, h2, h3 {
-  color: var(--accent);
-}
-
-/* ===== Sidebar ===== */
-#sidebar {
-  background-color: var(--panel);
-  height: 100vh; /* full viewport height */
-  border-right: 2px solid var(--accent);
-}
-
-#sidebar .nav-link {
-  color: var(--text-muted);
-  font-weight: 600;
-}
-
-#sidebar .nav-link.active,
-#sidebar .nav-link:hover {
-  color: var(--accent2);
-}
-
-/* ===== Banner ===== */
-.banner {
-  background: linear-gradient(135deg, rgba(215,38,61,0.3), rgba(31,162,255,0.3)), url('assets/banner.jpg') center/cover no-repeat;
-  border-bottom: 2px solid var(--accent);
-}
-
-/* ===== Content Sections ===== */
-.content-section {
-  padding: 2rem 0;
-}
-
-/* Cards */
-.card.bg-dark {
-  background-color: #1a1a1d;
-}
-
-.border-accent {
-  border: 1px solid var(--accent);
-}
-
-.btn-outline-accent {
-  --bs-btn-color: var(--accent2);
-  --bs-btn-border-color: var(--accent2);
-  --bs-btn-hover-bg: var(--accent2);
-  --bs-btn-hover-border-color: var(--accent2);
-  --bs-btn-hover-color: var(--bg);
-}
-
-/* Profile Image */
-.profile {
-  border: 3px solid var(--accent2);
-  border-radius: 50%;
-}
-
-/* ===== Responsive Tweaks ===== */
-@media (max-width: 767.98px) {
+   :root {
+    --bg: #0c0c0e;         /* near‑black background */
+    --panel: #131317;      /* panel background */
+    --accent: #D7263D;     /* neon red/pink */
+    --accent2: #1FA2FF;    /* neon cyan */
+    --text: #E5E5E5;       /* light gray text */
+    --text-muted: #9a9a9a; /* muted gray text */
+    font-family: 'Orbitron', 'Roboto', 'Segoe UI', sans-serif;
+  }
+  
+  /* ===== Base ===== */
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+  }
+  
+  h1, h2, h3 {
+    color: var(--accent);
+  }
+  
+  /* ===== Sidebar ===== */
   #sidebar {
-    height: auto;
-    width: 100%;
-    border-right: none;
+    background-color: var(--panel);
+    height: 100vh; /* full viewport height */
+    border-right: 2px solid var(--accent);
+  }
+  
+  #sidebar .nav-link {
+    color: var(--text-muted);
+    font-weight: 600;
+  }
+  
+  #sidebar .nav-link.active,
+  #sidebar .nav-link:hover {
+    color: var(--accent2);
+  }
+  
+  /* ===== Banner ===== */
+  .banner {
+    background: linear-gradient(135deg, rgba(215,38,61,0.3), rgba(31,162,255,0.3)), url('assets/banner.jpg') center/cover no-repeat;
     border-bottom: 2px solid var(--accent);
   }
-}
+  
+  /* ===== Content Sections ===== */
+  .content-section {
+    padding: 2rem 0;
+  }
+  
+  /* Cards */
+  .card.bg-dark {
+    background-color: #1a1a1d;
+  }
+  
+  .border-accent {
+    border: 1px solid var(--accent);
+  }
+  
+  .btn-outline-accent {
+    --bs-btn-color: var(--accent2);
+    --bs-btn-border-color: var(--accent2);
+    --bs-btn-hover-bg: var(--accent2);
+    --bs-btn-hover-border-color: var(--accent2);
+    --bs-btn-hover-color: var(--bg);
+  }
+  
+  /* Profile Image */
+  .profile {
+    border: 3px solid var(--accent2);
+    border-radius: 50%;
+  }
+  
+  /* ===== Responsive Tweaks ===== */
+  @media (max-width: 767.98px) {
+    #sidebar {
+      height: auto;
+      width: 100%;
+      border-right: none;
+      border-bottom: 2px solid var(--accent);
+    }
+  }
+  
