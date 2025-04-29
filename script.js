@@ -1,37 +1,42 @@
-// ===== Portfolio Sidebar Navigation =====
-// Toggle content sections based on sidebar clicks.
-document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('#sidebarNav .nav-link');
-    const sections = document.querySelectorAll('.content-section');
+/* Sidebar-as-tabs: show one section at a time, keep the URL hash in sync */
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = [...document.querySelectorAll("#sidebar .nav-link")];
+    const sections = [...document.querySelectorAll("main section")];
   
-    // Helper: show selected section, hide others
     function showSection(id) {
       sections.forEach(sec => {
-        if (sec.id === id) {
-          sec.classList.remove('d-none');
-        } else {
-          sec.classList.add('d-none');
-        }
+        sec.style.display = sec.id === id ? "block" : "none";
       });
     }
   
-    // Bind click events
-    links.forEach(link => {
-      link.addEventListener('click', e => {
+    function setActive(link) {
+      navLinks.forEach(l => l.classList.remove("active"));
+      link.classList.add("active");
+    }
+  
+    /* click → swap “tab” */
+    navLinks.forEach(link => {
+      link.addEventListener("click", e => {
         e.preventDefault();
-        // Update active state
-        links.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-        // Show corresponding section
-        showSection(link.dataset.target);
-        // If on mobile, scroll to top for better UX
-        if (window.innerWidth < 768) {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        const id = link.getAttribute("href").slice(1);
+        setActive(link);
+        showSection(id);
+        history.replaceState(null, "", "#" + id);      // keep address bar tidy
       });
     });
   
-    // Show default section on load
-    showSection('bio');
+    /* initial state: respect any hash or default to first section */
+    const startID =
+      location.hash && document.querySelector(location.hash)
+        ? location.hash.slice(1)
+        : sections[0].id;
+    const startLink = navLinks.find(
+      l => l.getAttribute("href").slice(1) === startID
+    );
+    setActive(startLink);
+    showSection(startID);
+  
+    /* update footer year */
+    document.getElementById("year").textContent = new Date().getFullYear();
   });
   
