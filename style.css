@@ -45,7 +45,7 @@ h3 {
 
 /* ===== Banner ===== */
 .banner {
-  background: linear-gradient(135deg, rgba(215, 38, 61, .3), rgba(31, 162, 255, .3)), url("assets/banner.jpg") center/cover no-repeat;
+  background: linear-gradient(135deg, rgba(215, 38, 61, .3), rgba(31, 162, 255, .3)), url("assets/banner.png") center/cover no-repeat;
   border-bottom: 2px solid var(--accent);
 }
 
